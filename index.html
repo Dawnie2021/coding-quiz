@@ -5,11 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
+    <style>
+        .container, .start {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .quiz button {
+            display: flex;
+            display: block;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
 </head>
 <!-- added first section -->
 <main class="container">
-    <section class="Start">
+    <section class="start">
         <header class="container">
             <h2>Coding Quiz Challenge</h2>
         </header>
@@ -17,7 +28,7 @@
             answers will penalize your score/time by ten seconds!</p>
         <button>Start</button>
     </section>
-    <section class="Quiz">
+    <section class="quiz">
         <header class="container">
             <h2>Quiz</h2>
         </header>
@@ -26,7 +37,7 @@
         <button>2. Answer</button>
         <button>3. Answer</button>
     </section>
-    <section class="End">
+    <section class="end">
         <header class="container">
             <h2>End</h2>
         </header>
