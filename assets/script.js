@@ -6,10 +6,9 @@ var startButton = document.querySelector('#start-btn');
 var quizScreenTwo = document.querySelector('.quiz-two');
 var quizScreenThree = document.querySelector('.quiz-three');
 var quizScreenFour = document.querySelector('.quiz-four');
-// added a submit button variable
 var submitButton = document.querySelector('#submit-btn');
-// added a view high scores variable
-var viewHighScoresButton = document.querySelector('#highscores-btn')
+var viewHighScoresButton = document.querySelector('#highscores-btn');
+var highScoreScreen = document.querySelector('.last-page');
 
 function showStart() {
     startScreen.style.display = null;
@@ -18,6 +17,7 @@ function showStart() {
     quizScreenThree.style.display = "none";
     quizScreenFour.style.display = "none";
     endScreen.style.display = "none";
+    highScoreScreen.style.display = "none";
 }
 
 function showQuiz() {
@@ -27,6 +27,7 @@ function showQuiz() {
     quizScreenThree.style.display = "none";
     quizScreenFour.style.display = "none";
     endScreen.style.display = "none";
+    highScoreScreen.style.display = "none";
 }
 
 function showQuizTwo() {
@@ -36,6 +37,7 @@ function showQuizTwo() {
     quizScreenThree.style.display = "none";
     quizScreenFour.style.display = "none";
     endScreen.style.display = "none";
+    highScoreScreen.style.display = "none";
 }
 
 function showQuizThree() {
@@ -45,6 +47,7 @@ function showQuizThree() {
     quizScreenThree.style.display = null;
     quizScreenFour.style.display = "none";
     endScreen.style.display = "none";
+    highScoreScreen.style.display = "none";
 }
 
 function showQuizFour() {
@@ -54,6 +57,7 @@ function showQuizFour() {
     quizScreenThree.style.display = "none";
     quizScreenFour.style.display = null;
     endScreen.style.display = "none";
+    highScoreScreen.style.display = "none";
 }
 
 function showEnd() {
@@ -63,6 +67,17 @@ function showEnd() {
     quizScreenThree.style.display = "none";
     quizScreenFour.style.display = "none";
     endScreen.style.display = null;
+    highScoreScreen.style.display = "none";
+}
+
+function showLastPage() {
+    startScreen.style.display = "none";
+    quizScreen.style.display = "none";
+    quizScreenTwo.style.display = "none";
+    quizScreenThree.style.display = "none";
+    quizScreenFour.style.display = "none";
+    endScreen.style.display = "none"; 
+    highScoreScreen.style.display = null;
 }
 // added event listeners
 startButton.addEventListener('click', function (event) {
@@ -85,6 +100,9 @@ quizScreenFour.addEventListener('click', function (event) {
     showEnd();
 });
 
+endScreen.addEventListener('click', function (event) {
+    showLastPage();
+});
 
 
 
