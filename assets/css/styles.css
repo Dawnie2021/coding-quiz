@@ -60,11 +60,12 @@ p {
 }
 
 .last-page h2 {
-padding: 20px;
-font-size: 30px;
+    padding: 20px;
+    font-size: 30px;
 }
+
 #display-area {
-    width:200px;
+    width: 200px;
     height: 35px;
     border: solid black;
     margin-bottom: 30px;

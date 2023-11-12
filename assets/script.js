@@ -76,8 +76,13 @@ function showLastPage() {
     quizScreenTwo.style.display = "none";
     quizScreenThree.style.display = "none";
     quizScreenFour.style.display = "none";
-    endScreen.style.display = "none"; 
+    endScreen.style.display = "none";
     highScoreScreen.style.display = null;
+}
+
+function selectAnswer() {
+
+    
 }
 // added event listeners
 startButton.addEventListener('click', function (event) {
