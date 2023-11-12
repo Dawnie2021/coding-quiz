@@ -24,32 +24,33 @@
     font-weight: 400;
 }
 
-.start,
 .quiz,
 .quiz-two,
 .quiz-three,
 .quiz-four {
     background-color: blueviolet;
-
 }
 
 .quiz,
 .quiz-two,
 .quiz-three,
-.quiz-four button {
+.quiz-four,
+button {
     display: flex;
     flex-direction: column;
-
 }
 
 .quiz,
 .quiz-two,
 .quiz-three,
-.quiz-four p {
+.quiz-four,
+p {
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 700;
 }
 
-.end {
+.end,
+.start {
     font-size: 25px;
+    background-color: cornflowerblue;
 }
