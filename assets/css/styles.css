@@ -9,6 +9,11 @@
     justify-content: space-between;
 }
 
+.top p {
+    font-size: 25px;
+    font-weight: 500;
+}
+
 #start-btn {
     margin-left: 40%;
 }
@@ -18,12 +23,22 @@
     font-weight: 400;
 }
 
+.start,
+.quiz,
+.quiz-two,
+.quiz-three,
+.quiz-four {
+    background-color: blueviolet;
+
+}
+
 .quiz,
 .quiz-two,
 .quiz-three,
 .quiz-four button {
     display: flex;
     flex-direction: column;
+
 }
 
 .quiz,
