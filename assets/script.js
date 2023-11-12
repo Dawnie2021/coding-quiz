@@ -10,6 +10,7 @@ var quizScreenFour = document.querySelector('.quiz-four');
 var submitButton = document.querySelector('#submit-btn');
 // added a view high scores variable
 var viewHighScoresButton = document.querySelector('#highscores-btn')
+
 function showStart() {
     startScreen.style.display = null;
     quizScreen.style.display = "none";
