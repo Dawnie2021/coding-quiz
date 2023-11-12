@@ -80,21 +80,7 @@ quizScreenThree.addEventListener('click', function (event) {
 quizScreenFour.addEventListener('click', function (event) {
     showEnd();
 });
-quizScreen.addEventListener('click', function (event) {
-    if (event.target.matches('button'))
-});
 
-quizScreenTwo.addEventListener('click', function (event) {
-    if (event.target.matches('button'))
-    });
-
-quizScreenThree.addEventListener('click', function (event) {
-    if (event.target.matches('button'))
-        });
-
-quizScreenFour.addEventListener('click', function (event) {
-    if (event.target.matches('button'))
-            });
 
 
 
