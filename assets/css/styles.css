@@ -1,22 +1,39 @@
-.container,
-        .start {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-/* added more classes to style */
-        .quiz, .quiz-two, .quiz-three, .quiz-four button {
-            display: flex;
-            flex-direction: column;
-           
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .top {
-            display: flex;
-            margin: auto;
-            justify-content:space-between
-           
-         
-            
-    
-        }
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+#start-btn {
+    margin-left: 40%;
+}
+
+.start p {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.quiz,
+.quiz-two,
+.quiz-three,
+.quiz-four button {
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz,
+.quiz-two,
+.quiz-three,
+.quiz-four p {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.end {
+    font-size: 25px;
+}
