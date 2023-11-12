@@ -6,7 +6,8 @@ var startButton = document.querySelector('#start-btn');
 var quizScreenTwo = document.querySelector('.quiz-two');
 var quizScreenThree = document.querySelector('.quiz-three');
 var quizScreenFour = document.querySelector('.quiz-four');
-
+// added a submit button variable
+var submitButton = document.querySelector('#submit-btn');
 function showStart() {
     startScreen.style.display = null;
     quizScreen.style.display = "none";
