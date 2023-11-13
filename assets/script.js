@@ -14,6 +14,7 @@ var scoreArr = JSON.parse(localStorage.getItem("User score"))
     || [];
 var firstScore = document.querySelector("#first-score");
 firstScore.textContent = "Score: " + scoreArr[0].score + " Initials: " + scoreArr[0].initals;
+
 function showStart() {
     startScreen.style.display = null;
     quizScreen.style.display = "none";
@@ -107,7 +108,7 @@ quizScreen.addEventListener('click', function (event) {
     var element = event.target.innerHTML;
     console.log(element);
     if (element !== "1.Alerts") {
-        alert("we just lost 15 points")
+        alert("We just lost 15 points")
     }
     showQuizTwo();
 });
@@ -117,7 +118,7 @@ quizScreenTwo.addEventListener('click', function (event) {
     var element = event.target.innerHTML;
     console.log(element);
     if (element !== "2.Parentheses") {
-        alert("we just lost 15 points")
+        alert("We just lost 15 points")
     }
 
 });
@@ -127,7 +128,7 @@ quizScreenThree.addEventListener('click', function (event) {
     var element = event.target.innerHTML;
     console.log(element);
     if (element !== "3.Console.log") {
-        alert("we just lost 15 points")
+        alert("We just lost 15 points")
     }
 });
 
@@ -136,7 +137,7 @@ quizScreenFour.addEventListener('click', function (event) {
     var element = event.target.innerHTML;
     console.log(element);
     if (element !== "3.HTML") {
-        alert("we just lost 15 points")
+        alert("We just lost 15 points")
     }
 });
 
