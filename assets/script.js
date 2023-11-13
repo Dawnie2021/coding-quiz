@@ -2,6 +2,7 @@
 var startScreen = document.querySelector('.start');
 var quizScreen = document.querySelector('.quiz');
 var endScreen = document.querySelector('.end');
+var timerEl = document.querySelector('#timer');
 var startButton = document.querySelector('#start-btn');
 var quizScreenTwo = document.querySelector('.quiz-two');
 var quizScreenThree = document.querySelector('.quiz-three');
@@ -12,8 +13,8 @@ var highScoreScreen = document.querySelector('.last-page');
 var inputElement = document.querySelector("#input-element");
 var scoreArr = JSON.parse(localStorage.getItem("User score")) || [];
 var firstScore = document.querySelector("#first-score")
-firstScore.textContent = "Score: " + scoreArr[0].score + " Initials: " + scoreArr[0].initals;
-
+var seconds = 100;
+var timerInterval;
 function showStart() {
     startScreen.style.display = null;
     quizScreen.style.display = "none";
@@ -32,6 +33,20 @@ function showQuiz() {
     quizScreenFour.style.display = "none";
     endScreen.style.display = "none";
     highScoreScreen.style.display = "none";
+
+    console.log("HEHEHEHEEYEH");
+
+    timerInterval = setInterval(function () {
+        seconds--;
+        timerEl.textContent = seconds;
+        if (seconds <= 0) {
+            clearInterval(timerInterval);
+            seconds = 0;
+            timerEl.textContent = seconds;
+            showEnd();
+        }
+
+    }, 1000);
 }
 
 function showQuizTwo() {
@@ -72,6 +87,8 @@ function showEnd() {
     quizScreenFour.style.display = "none";
     endScreen.style.display = null;
     highScoreScreen.style.display = "none";
+    clearInterval(timerInterval);
+
 }
 
 function showLastPage() {
@@ -92,11 +109,13 @@ function selectAnswer(event) {
 
 function submitScores() {
     var highScoreObj = {
-        score: "100",
-        initals: inputElement.value 
+        score: seconds,
+        initals: inputElement.value
     };
     scoreArr.push(highScoreObj);
     localStorage.setItem("User score", JSON.stringify(scoreArr))
+    firstScore.textContent = "Score: " + scoreArr.at(-1).score + " Initials: " + scoreArr.at(-1).initals;
+
 }
 
 startButton.addEventListener('click', function (event) {
@@ -107,11 +126,10 @@ quizScreen.addEventListener('click', function (event) {
     var element = event.target.innerHTML;
     console.log(element);
     if (element !== "1.Alerts") {
-        alert("We just lost 15 points")
-    } else {
-        alert("You are correct!")
+        seconds -= 15;
+        timerEl.textContent = seconds;
+        showQuizTwo();
     }
-    showQuizTwo();
 });
 
 quizScreenTwo.addEventListener('click', function (event) {
@@ -119,9 +137,9 @@ quizScreenTwo.addEventListener('click', function (event) {
     var element = event.target.innerHTML;
     console.log(element);
     if (element !== "2.Parentheses") {
-        alert("We just lost 15 points")
-    } else {
-        alert("You are correct!")
+        seconds -= 15;
+        timerEl.textContent = seconds;
+
     }
 
 });
@@ -131,9 +149,9 @@ quizScreenThree.addEventListener('click', function (event) {
     var element = event.target.innerHTML;
     console.log(element);
     if (element === "3.Console.log") {
-        alert("You are correct!")
     } else {
-        alert("We just lost 15 points")
+        seconds -= 15;
+        timerEl.textContent = seconds;
     }
 });
 
@@ -142,11 +160,12 @@ quizScreenFour.addEventListener('click', function (event) {
     var element = event.target.innerHTML;
     console.log(element);
     if (element !== "3.HTML") {
-        alert("We just lost 15 points")
-    } else {
-        alert("You are correct!")
+        seconds -= 15;
+        timerEl.textContent = seconds;
+
     }
 });
+
 
 
 submitButton.addEventListener('click', function () {
@@ -161,4 +180,3 @@ function init() {
 }
 
 init();
-
