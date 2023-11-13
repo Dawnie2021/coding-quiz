@@ -7,6 +7,7 @@
 .top {
     display: flex;
     justify-content: space-between;
+    color: blueviolet;
 }
 
 .top p {
@@ -73,4 +74,9 @@ p {
 
 #first-score {
 color: black;
+}
+
+.last-page h2{
+    font-size: 30px;
+    color: blue;
 }
