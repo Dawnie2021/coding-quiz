@@ -70,3 +70,7 @@ p {
     border: solid black;
     margin-bottom: 30px;
 }
+
+#first-score {
+color: black;
+}

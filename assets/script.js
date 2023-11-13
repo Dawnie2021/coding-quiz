@@ -9,7 +9,11 @@ var quizScreenFour = document.querySelector('.quiz-four');
 var submitButton = document.querySelector('#submit-btn');
 var viewHighScoresButton = document.querySelector('#highscores-btn');
 var highScoreScreen = document.querySelector('.last-page');
-
+var inputElement = document.querySelector("#input-element");
+var scoreArr = JSON.parse(localStorage.getItem("User score"))
+    || [];
+var firstScore = document.querySelector("#first-score");
+firstScore.textContent = "Score: " + scoreArr[0].score + " Initials: " + scoreArr[0].initals;
 function showStart() {
     startScreen.style.display = null;
     quizScreen.style.display = "none";
@@ -80,9 +84,19 @@ function showLastPage() {
     highScoreScreen.style.display = null;
 }
 
-function selectAnswer() {
+function selectAnswer(e) {
+    var element = e.target.innerHTML;
+    console.log(element);
 
-    
+}
+
+function submitScores() {
+    var highScoreObj = {
+        score: 60,
+        initals: inputElement.value
+    };
+    scoreArr.push(highScoreObj);
+    localStorage.setItem("User score", JSON.stringify(scoreArr))
 }
 // added event listeners
 startButton.addEventListener('click', function (event) {
@@ -90,25 +104,47 @@ startButton.addEventListener('click', function (event) {
 });
 
 quizScreen.addEventListener('click', function (event) {
+    var element = event.target.innerHTML;
+    console.log(element);
+    if (element !== "1.Alerts") {
+        alert("we just lost 15 points")
+    }
     showQuizTwo();
 });
 
 quizScreenTwo.addEventListener('click', function (event) {
     showQuizThree();
+    var element = event.target.innerHTML;
+    console.log(element);
+    if (element !== "2.Parentheses") {
+        alert("we just lost 15 points")
+    }
+
 });
 
 quizScreenThree.addEventListener('click', function (event) {
     showQuizFour();
+    var element = event.target.innerHTML;
+    console.log(element);
+    if (element !== "3.Console.log") {
+        alert("we just lost 15 points")
+    }
 });
 
 quizScreenFour.addEventListener('click', function (event) {
     showEnd();
+    var element = event.target.innerHTML;
+    console.log(element);
+    if (element !== "3.HTML") {
+        alert("we just lost 15 points")
+    }
 });
 
-endScreen.addEventListener('click', function (event) {
+
+submitButton.addEventListener('click', function () {
+    submitScores();
     showLastPage();
-});
-
+})
 
 
 
