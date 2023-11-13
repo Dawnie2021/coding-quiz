@@ -11,8 +11,8 @@ var viewHighScoresButton = document.querySelector('#highscores-btn');
 var highScoreScreen = document.querySelector('.last-page');
 var inputElement = document.querySelector("#input-element");
 var scoreArr = JSON.parse(localStorage.getItem("User score")) || [];
-var firstScore = document.querySelector("#first-score");
-// firstScore.textContent = "Score: " + scoreArr[0].score + " Initials: " + scoreArr[0].initals;
+var firstScore = document.querySelector("#first-score")
+firstScore.textContent = "Score: " + scoreArr[0].score + " Initials: " + scoreArr[0].initals;
 
 function showStart() {
     startScreen.style.display = null;
