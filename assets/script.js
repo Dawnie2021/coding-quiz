@@ -18,7 +18,7 @@ var timerInterval;
 var backButton = document.querySelector("#back-btn");
 var ClearHighScores = document.querySelector("#clear-scores");
 
-
+// added a function to show the first page
 function showStart() {
     startScreen.style.display = null;
     quizScreen.style.display = "none";
@@ -28,7 +28,7 @@ function showStart() {
     endScreen.style.display = "none";
     highScoreScreen.style.display = "none";
 }
-
+// created a function to show the quiz
 function showQuiz() {
     startScreen.style.display = "none";
     quizScreen.style.display = null;
@@ -37,7 +37,7 @@ function showQuiz() {
     quizScreenFour.style.display = "none";
     endScreen.style.display = "none";
     highScoreScreen.style.display = "none";
-
+    // set a time clock
     timerInterval = setInterval(function () {
         seconds--;
         timerEl.textContent = seconds;
@@ -50,7 +50,7 @@ function showQuiz() {
 
     }, 1000);
 }
-
+// created functions to go through the screens one at a time
 function showQuizTwo() {
     startScreen.style.display = "none";
     quizScreen.style.display = "none";
@@ -80,7 +80,7 @@ function showQuizFour() {
     endScreen.style.display = "none";
     highScoreScreen.style.display = "none";
 }
-
+// created a function to show the end 
 function showEnd() {
     startScreen.style.display = "none";
     quizScreen.style.display = "none";
@@ -92,7 +92,7 @@ function showEnd() {
     clearInterval(timerInterval);
 
 }
-
+// created a function to show high score page
 function showLastPage() {
     startScreen.style.display = "none";
     quizScreen.style.display = "none";
@@ -108,7 +108,7 @@ function selectAnswer(event) {
     console.log(element);
 
 }
-
+// added a function to submit scores and initals 
 function submitScores() {
     var highScoreObj = {
         score: seconds,
@@ -119,7 +119,7 @@ function submitScores() {
     firstScore.textContent = "Score: " + scoreArr.at(-1).score + " Initials: " + scoreArr.at(-1).initals;
 
 }
-
+// added a function to display high scores
 function displayHighScores() {
     var highScores = JSON.parse(localStorage.getItem("User score"))
     console.log(highScores.length)
@@ -129,7 +129,7 @@ function displayHighScores() {
         highScoreScreen.appendChild(highScoreEl);
     }
 }
-
+// added eventlisteners
 startButton.addEventListener('click', function (event) {
     showQuiz();
 });
@@ -138,9 +138,9 @@ quizScreen.addEventListener('click', function (event) {
     showQuizTwo();
     var element = event.target.innerHTML;
     if (element !== "1.Alerts") {
-        seconds -= 15; 
+        seconds -= 15;
         timerEl.textContent = seconds;
-        // showQuizTwo();
+
     }
 });
 

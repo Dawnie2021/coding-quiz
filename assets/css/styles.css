@@ -4,12 +4,14 @@
     box-sizing: border-box;
 }
 
+/* added style to put the top things to the top and to have space between them */
 .top {
     display: flex;
     justify-content: space-between;
     color: blueviolet;
 }
 
+/* gave the paragraph a bigger font size and made it bolder */
 .top p {
     font-size: 25px;
     font-weight: 500;
@@ -25,6 +27,7 @@
     font-weight: 400;
 }
 
+/* gave the quiz screens background colors */
 .quiz,
 .quiz-two,
 .quiz-three,
@@ -41,6 +44,7 @@ button {
     flex-direction: column;
 }
 
+/* changed the font size and boldness */
 .quiz,
 .quiz-two,
 .quiz-three,
@@ -50,6 +54,7 @@ p {
     font-weight: 700;
 }
 
+/* gave it a background color */
 .end,
 .start {
     font-size: 25px;
@@ -76,6 +81,7 @@ p {
     color: black;
 }
 
+/* gave the words a bigger font size and chnaged the color */
 .last-page h2 {
     font-size: 30px;
     color: blue;
