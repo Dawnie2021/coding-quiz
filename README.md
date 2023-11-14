@@ -7,4 +7,6 @@
 ![Alt text](assets/images/screenshot2.png)
 ![Alt text](assets/images/screenshot3.png)
 
-## I used simpleCSS in my project.
+##Link to live URL
+https://dawnie2021.github.io/coding-quiz/
+

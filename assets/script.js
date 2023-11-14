@@ -38,8 +38,6 @@ function showQuiz() {
     endScreen.style.display = "none";
     highScoreScreen.style.display = "none";
 
-    console.log("HEHEHEHEEYEH");
-
     timerInterval = setInterval(function () {
         seconds--;
         timerEl.textContent = seconds;
@@ -123,37 +121,32 @@ function submitScores() {
 }
 
 function displayHighScores() {
-   var highScores =  JSON.parse(localStorage.getItem("User score"))
-   console.log(highScores.length) 
-for (var i = 0; i < highScores.length; i++)  {
-   var highScoreEl = document.createElement("p");
-   highScoreEl.textContent = (highScores[i].initals + " " + highScores[i].score);
-   highScoreScreen.appendChild(highScoreEl); 
+    var highScores = JSON.parse(localStorage.getItem("User score"))
+    console.log(highScores.length)
+    for (var i = 0; i < highScores.length; i++) {
+        var highScoreEl = document.createElement("p");
+        highScoreEl.textContent = (highScores[i].initals + " " + highScores[i].score);
+        highScoreScreen.appendChild(highScoreEl);
+    }
 }
-}
-
-
-
-
 
 startButton.addEventListener('click', function (event) {
     showQuiz();
 });
 
 quizScreen.addEventListener('click', function (event) {
+    showQuizTwo();
     var element = event.target.innerHTML;
-    console.log(element);
     if (element !== "1.Alerts") {
-        seconds -= 15;
+        seconds -= 15; 
         timerEl.textContent = seconds;
-        showQuizTwo();
+        // showQuizTwo();
     }
 });
 
 quizScreenTwo.addEventListener('click', function (event) {
     showQuizThree();
     var element = event.target.innerHTML;
-    console.log(element);
     if (element !== "2.Parentheses") {
         seconds -= 15;
         timerEl.textContent = seconds;
@@ -165,7 +158,6 @@ quizScreenTwo.addEventListener('click', function (event) {
 quizScreenThree.addEventListener('click', function (event) {
     showQuizFour();
     var element = event.target.innerHTML;
-    console.log(element);
     if (element === "3.Console.log") {
     } else {
         seconds -= 15;
@@ -176,14 +168,13 @@ quizScreenThree.addEventListener('click', function (event) {
 quizScreenFour.addEventListener('click', function (event) {
     showEnd();
     var element = event.target.innerHTML;
-    console.log(element);
+
     if (element !== "3.HTML") {
         seconds -= 15;
         timerEl.textContent = seconds;
 
     }
 });
-
 
 submitButton.addEventListener('click', function () {
     submitScores();
@@ -195,20 +186,26 @@ backButton.addEventListener('click', function (event) {
 
 ClearHighScores.addEventListener('click', function (event) {
     localStorage.clear()
-    highScoreScreen.removeChild(highScoreScreen.lastChild);
+    highScoreScreen.removeChild(highScoreScreen.lastChild)
 
 });
 
-viewHighScoresButton.addEventListener('click', function(event){
+viewHighScoresButton.addEventListener('click', function (event) {
     showLastPage();
     displayHighScores();
-}) 
-
-
-
+})
 
 function init() {
     showStart();
 }
 
 init();
+
+
+
+
+
+
+
+
+

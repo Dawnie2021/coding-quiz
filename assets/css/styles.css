@@ -73,10 +73,10 @@ p {
 }
 
 #first-score {
-color: black;
+    color: black;
 }
 
-.last-page h2{
+.last-page h2 {
     font-size: 30px;
     color: blue;
 }
