@@ -6,6 +6,8 @@
 ![Alt text](assets/images/screenshot1.png)
 ![Alt text](assets/images/screenshot2.png)
 ![Alt text](assets/images/screenshot3.png)
+![Alt text](assets/images/screenshot4.png)
+
 
 ##Link to live URL
 https://dawnie2021.github.io/coding-quiz/
