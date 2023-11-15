@@ -186,7 +186,12 @@ backButton.addEventListener('click', function (event) {
 
 ClearHighScores.addEventListener('click', function (event) {
     localStorage.clear()
-    highScoreScreen.removeChild(highScoreScreen.lastChild)
+    // highScoreScreen.removeChild(highScoreScreen.lastChild)
+    var paragraphs = highScoreScreen.getElementsByTagName("p")
+    for (var i = paragraphs.length - 1; i >= 0; i--) {
+        var paragraph = paragraphs[i] 
+        paragraph.parentNode.removeChild(paragraph)
+    }
 
 });
 
